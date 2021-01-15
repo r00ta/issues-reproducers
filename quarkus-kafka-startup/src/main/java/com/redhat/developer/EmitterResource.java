@@ -9,11 +9,11 @@ import javax.ws.rs.core.Response;
 public class EmitterResource {
 
     @Inject
-    Emitter emitter;
+    Emitter publisher;
 
     @GET
     public Response force(){
-        emitter.emit("forced");
+//        publisher.publish();
         return Response.ok().build();
     }
 }
