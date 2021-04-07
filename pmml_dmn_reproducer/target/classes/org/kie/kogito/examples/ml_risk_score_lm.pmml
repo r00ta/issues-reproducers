@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<PMML version="4.2" xsi:schemaLocation="http://www.dmg.org/PMML-4_2 http://www.dmg.org/v4-2-1/pmml-4-2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.dmg.org/PMML-4_2">
+ <Header copyright="Copyright (c) 2021 jrota" description="Linear Regression Model">
+  <Extension name="user" value="jrota" extender="SoftwareAG PMML Generator"/>
+  <Application name="SoftwareAG PMML Generator" version="2.3.1"/>
+  <Timestamp>2021-04-07 10:35:18</Timestamp>
+ </Header>
+ <DataDictionary numberOfFields="5">
+  <DataField name="Risk" optype="continuous" dataType="double"/>
+  <DataField name="Age" optype="continuous" dataType="double"/>
+  <DataField name="MonthlySalary" optype="continuous" dataType="double"/>
+  <DataField name="TotalRequired" optype="continuous" dataType="double"/>
+  <DataField name="NumberInstallments" optype="continuous" dataType="double"/>
+ </DataDictionary>
+ <RegressionModel modelName="lm_Model" functionName="regression" algorithmName="least squares">
+  <MiningSchema>
+   <MiningField name="Risk" usageType="predicted" invalidValueTreatment="returnInvalid"/>
+   <MiningField name="Age" usageType="active" invalidValueTreatment="returnInvalid"/>
+   <MiningField name="MonthlySalary" usageType="active" invalidValueTreatment="returnInvalid"/>
+   <MiningField name="TotalRequired" usageType="active" invalidValueTreatment="returnInvalid"/>
+   <MiningField name="NumberInstallments" usageType="active" invalidValueTreatment="returnInvalid"/>
+  </MiningSchema>
+  <Output>
+   <OutputField name="Predicted_Risk" optype="continuous" dataType="double" feature="predictedValue"/>
+  </Output>
+  <RegressionTable intercept="0.728738020314142">
+   <NumericPredictor name="Age" exponent="1" coefficient="0.00337820896303838"/>
+   <NumericPredictor name="MonthlySalary" exponent="1" coefficient="-1.1880868132675e-05"/>
+   <NumericPredictor name="TotalRequired" exponent="1" coefficient="3.05301966698015e-07"/>
+   <NumericPredictor name="NumberInstallments" exponent="1" coefficient="-0.000490511511109188"/>
+  </RegressionTable>
+ </RegressionModel>
+</PMML>
